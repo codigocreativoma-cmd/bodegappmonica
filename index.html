@@ -2,104 +2,615 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BodegApp – Sistema para Bodegas y Tiendas de Venezuela</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+  <title>BodegApp – Sistema de Ventas e Inventario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="BodegApp es un sistema de escritorio para tiendas y bodegas que integra inventario, punto de venta, reportes y cobranza, pensado para funcionar incluso sin Internet."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Encabezado -->
- <header class="bg-blue-600 text-white py-8 text-center shadow-md">
-  <div class="flex flex-col items-center justify-center space-y-4">
-    <!-- Imagen del logo -->
-    <img src="public/images/bodegapp.png"
-         alt="Logo BodegApp"
-         class="w-32 h-32 object-contain border-4 border-white rounded-2xl p-1 bg-white shadow-lg" />
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <img src="BodegApp.png" alt="BodegApp logo" class="brand-logo" />
+          <div class="brand-title">BodegApp</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#funcionamiento">Cómo funciona</a></li>
+            <li><a href="#seguridad">Seguridad</a></li>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#respaldo">Buenas prácticas</a></li>
+            <li><a href="#faq">Preguntas</a></li>
+          </ul>
+        </nav>
+        <a href="https://1drv.ms/u/c/c7e09ae7569610d9/EawGWnFz2MxFoCiep2410G8BWzUi94SXXqAXnUbUtA8h3Q?e=5i58Oj" class="btn btn-primary nav-cta">Probar BodegApp</a>
+      </div>
+    </header>
 
-    <!-- Título y descripción -->
-    <h1 class="text-4xl font-bold">BodegApp</h1>
-    <p class="text-lg mt-2">Sistema para Bodegas y Tiendas de Venezuela</p>
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span></span>
+              Sistema para tiendas y bodegas
+            </div>
+            <h1>
+              Controla tus ventas y tus ganancias
+              <span>sin complicarte</span>.
+            </h1>
+            <p class="hero-subtitle">
+              BodegApp es un sistema de escritorio que une inventario,
+              precios actualizados a la tasa del día, punto de
+              venta, reportes y cobranza. Diseñado para funcionar incluso sin
+              Internet y pensado para el día a día de tu tienda.
+            </p>
 
-    <!-- Botón de contacto -->
-    <a href="https://wa.me/584241970773"
-       class="mt-4 inline-block bg-white text-blue-600 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-50 transition">
-       Contactar
-    </a>
+            <div class="hero-badges">
+              <div class="tag">Funciona sin conexión</div>
+              <div class="tag">Licencia por equipo</div>
+              <div class="tag">Ventas en VES y USD</div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#cta" class="btn btn-primary">
+                Descargar BodegApp →
+              </a>
+              <a href="#modulos" class="btn btn-outline">Ver módulos del sistema</a>
+            </div>
+
+            <div class="hero-note">
+              Instalación como aplicación de escritorio (.exe) con base de datos
+              local en tu propio equipo.
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumen visual de BodegApp">
+            <div class="hero-card-header">
+              <div>
+                <div class="hero-card-title">Hoy en tu negocio</div>
+                <div style="font-size: 0.78rem; color: var(--muted);">
+                  Indicadores en tiempo real desde tu caja
+                </div>
+              </div>
+              <span class="pill">Dashboard BodegApp</span>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric">
+                <div class="metric-label">Ganancia neta del día</div>
+                <div class="metric-value">$ 182,50</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Ventas procesadas</div>
+                <div class="metric-value">74 tickets</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Ingresos hoy</div>
+                <div class="metric-value">Bs. 12.540,00</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Productos con stock bajo</div>
+                <div class="metric-value">9 alertas</div>
+              </div>
+            </div>
+
+            <div class="hero-dashboard-placeholder">
+              <h3>Indicadores, inventario y caja en un solo lugar</h3>
+              <div class="hero-dashboard-grid">
+                <div class="hero-dashboard-box">
+                  <span>Acceso</span>
+                  <strong>Escritorio + Móvil</strong>
+                </div>
+                <div class="hero-dashboard-box">
+                  <span>Modo</span>
+                  <strong>Offline</strong>
+                </div>
+                <div class="hero-dashboard-box">
+                  <span>Licencia</span>
+                  <strong>Por equipo</strong>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="funcionamiento">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Arquitectura y funcionamiento</div>
+            <h2 class="section-title">Cómo trabaja BodegApp detrás de escena</h2>
+            <p class="section-description">
+              Aunque por fuera es sencillo, por dentro BodegApp combina un
+              servidor integrado, una base de datos local y una interfaz rápida
+              para que todo funcione sin depender de Internet.
+            </p>
+          </div>
+
+          <div class="section-grid">
+            <div class="card">
+              <h3>Aplicación de escritorio nativa</h3>
+              <p>
+                El sistema se instala como un programa de escritorio (.exe) y no
+                depende de ningún navegador. Todo corre dentro de tu propio
+                equipo.
+              </p>
+              <ul>
+                <li>Servidor Express.js integrado para la lógica de negocio.</li>
+                <li>Interfaz con menú fijo y navegación fluida entre módulos.</li>
+                <li>
+                  Base de datos SQLite en
+                  <code>C:\ProgramData\BodegApp_Data\mi-tienda.db</code>.
+                </li>
+              </ul>
+
+              <div class="badge-row">
+                <span class="badge">Punto de venta</span>
+                <span class="badge">Inventario</span>
+                <span class="badge">Reportes</span>
+                <span class="badge">Cobranza</span>
+              </div>
+
+              <h3>Acceso desde otros dispositivos</h3>
+              <p>
+                Desde la barra lateral puedes ver la IP local y un código QR para
+                abrir BodegApp desde cualquier dispositivo en la misma red
+                Wi-Fi.
+              </p>
+              <ul>
+                <li>Funciona en teléfonos, tablets o PCs de la red local.</li>
+                <li>Se accede desde el navegador, sin instalar nada extra.</li>
+              </ul>
+            </div>
+
+            <div class="section-gallery">
+              <figure>
+                <img src="img/funcionamiento-1.png" alt="Pantalla principal de BodegApp" class="gallery-img" />
+              </figure>
+              <figure>
+                <img src="img/funcionamiento-2.gif" alt="Navegación entre módulos" class="gallery-img" />
+              </figure>
+              <figure>
+                <img src="img/funcionamiento-3.png" alt="Acceso desde el móvil en red local" class="gallery-img" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="seguridad">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Seguridad y licenciamiento</div>
+            <h2 class="section-title">Tu información, segura en tu propio equipo</h2>
+            <p class="section-description">
+              BodegApp se instala localmente, valida la licencia sin Internet y
+              te permite proteger acciones sensibles con una contraseña de
+              administrador.
+            </p>
+          </div>
+
+          <div class="section-grid">
+            <div class="card">
+              <h3>Licencia offline</h3>
+              <ul>
+                <li>Periodo de prueba de 72 horas al instalar.</li>
+                <li>
+                  Validación por <strong>Hardware ID</strong> (Machine ID) del
+                  PC.
+                </li>
+                <li>
+                  Archivo de licencia protegido (Base64 + firma HMAC) para evitar
+                  manipulación de fechas.
+                </li>
+              </ul>
+
+              <h3>Protección por contraseña</h3>
+              <ul>
+                <li>Contraseña de administrador configurable.</li>
+                <li>
+                  Control de acceso para inventario, anulaciones, importaciones,
+                  reportes y cierre de caja.
+                </li>
+              </ul>
+
+              <h3>Datos bajo tu control</h3>
+              <p>
+                Toda la información vive en un solo archivo SQLite fácil de
+                respaldar. Basta copiarlo a un pendrive o disco externo.
+              </p>
+            </div>
+
+            <div class="section-gallery">
+              <figure>
+                <img src="img/seguridad-1.png" alt="Pantalla de activación de licencia" class="gallery-img" />
+              </figure>
+              <figure>
+                <img
+                  src="img/seguridad-2.png"
+                  alt="Configuración de contraseña de administrador"
+                  class="gallery-img"
+                />
+              </figure>
+              <figure>
+                <img src="img/seguridad-3.png" alt="Opciones de seguridad del sistema" class="gallery-img" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="modulos">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Módulos del sistema</div>
+            <h2 class="section-title">Todo lo que tu bodega necesita</h2>
+            <p class="section-description">
+              Desde el inventario hasta el cierre de caja, BodegApp organiza tu
+              trabajo en módulos claros para que no tengas que depender de hojas
+              sueltas ni múltiples programas.
+            </p>
+          </div>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>Indicadores (Dashboard)</h3>
+                <p>
+                  Resumen rápido del estado de tu negocio, protegido por
+                  contraseña si lo deseas.
+                </p>
+                <ul>
+                  <li>Ganancia neta del día (VES y USD).</li>
+                  <li>Ventas totales y monto cobrado hoy.</li>
+                  <li>Top 5 productos de los últimos 28 días.</li>
+                  <li>Alertas de stock bajo y valor total del inventario.</li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/indicadores-1.png" alt="Dashboard de indicadores" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/indicadores-2.png" alt="Gráficas de ventas del día" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/indicadores-3.png" alt="Alertas de stock bajo" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>Inventario</h3>
+                <p>
+                  El corazón de BodegApp. Registra productos por unidad o por
+                  bulto, genera códigos de barras y crea etiquetas de precio.
+                </p>
+                <ul>
+                  <li>Altas, ediciones y bajas con protección por contraseña.</li>
+                  <li>
+                    Manejo de costo por unidad y por bulto con cálculo automático.
+                  </li>
+                  <li>
+                    Búsqueda por nombre, categoría, proveedor o código de barras.
+                  </li>
+                  <li>Gestión de categorías, bultos y códigos EAN13 únicos.</li>
+                  <li>Impresión de etiquetas (habladores) listas para exhibir.</li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/inventario-1.png" alt="Listado de productos" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/inventario-2.png" alt="Formulario de producto" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/inventario-3.png" alt="Gestión de códigos de barras" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>POS / Ventas</h3>
+                <p>
+                  Punto de venta ágil para cobrar rápido y registrar cada
+                  movimiento de caja.
+                </p>
+                <ul>
+                  <li>Búsqueda por texto o escáner de código de barras.</li>
+                  <li>Soporte para productos vendidos por peso (Kg).</li>
+                  <li>Carrito editable antes de confirmar el pago.</li>
+                  <li>
+                    Multiples métodos de pago en una sola venta (VES, USD,
+                    tarjeta).
+                  </li>
+                  <li>
+                    Ventas a crédito (fiado) y registro de deudas en dólares para
+                    proteger el valor.
+                  </li>
+                  <li>
+                    Cierre de Caja (Reporte Z) con conteo manual, diferencias y
+                    PDF.
+                  </li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/pos-1.png" alt="Pantalla de punto de venta" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/pos-2.png" alt="Modal de pago y métodos múltiples" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/pos-3.png" alt="Cierre de caja y reporte Z" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>Reportes</h3>
+                <p>
+                  Analiza periodos específicos, identifica productos clave y
+                  genera reportes listos para imprimir.
+                </p>
+                <ul>
+                  <li>Reporte por rango de fechas.</li>
+                  <li>Resumen de ingresos, costo y ganancia neta.</li>
+                  <li>Detalle completo de ventas y productos.</li>
+                  <li>Generación de PDF profesional.</li>
+                  <li>
+                    Anulación de ventas de contado con retorno de stock y
+                    trazabilidad.
+                  </li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/reportes-1.png" alt="Selección de rango de fechas" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/reportes-2.png" alt="Tabla de ventas del periodo" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/reportes-3.png" alt="PDF de reporte generado" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>Cobranza (Fiados)</h3>
+                <p>
+                  Centraliza tus clientes, deudas y abonos en una sola vista.
+                </p>
+                <ul>
+                  <li>Lista de deudores con saldo pendiente.</li>
+                  <li>
+                    Deuda en USD (valor real) y equivalente en Bs. según tasa BCV.
+                  </li>
+                  <li>Registro y edición de datos de clientes.</li>
+                  <li>
+                    Detalle de ventas adeudadas y abonos en VES o USD con recálculo
+                    automático.
+                  </li>
+<li>
+                    Acceso directo a la vista de detalles de cada venta fiada.
+                  </li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/cobranza-1.png" alt="Lista de deudores" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/cobranza-2.png" alt="Detalle de deudas por cliente" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/cobranza-3.png" alt="Registro de abonos" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-grid">
+              <div class="card">
+                <h3>Configuración</h3>
+                <p>
+                  Ajusta licencia, tasas de cambio, cálculo de precios, logo y
+                  seguridad desde un solo panel.
+                </p>
+                <ul>
+                  <li>Activación de licencia con Hardware ID visible.</li>
+                  <li>Actualización de tasas BCV, paralelo y COP.</li>
+                  <li>
+                    Métodos de cálculo de precios: Recargo simple o margen fiscal.
+                  </li>
+                  <li>Personalización del nombre y logo del negocio.</li>
+                  <li>
+                    Exportar/Importar inventario en CSV y administración de
+                    contraseña de administrador.
+                  </li>
+                </ul>
+              </div>
+              <div class="section-gallery">
+                <figure>
+                  <img src="img/configuracion-1.png" alt="Panel de configuración" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/configuracion-2.png" alt="Gestión de tasas de cambio" class="gallery-img" />
+                </figure>
+                <figure>
+                  <img src="img/configuracion-3.png" alt="Opciones de exportar e importar" class="gallery-img" />
+                </figure>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="respaldo">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Buenas prácticas</div>
+            <h2 class="section-title">Cuida tu información y tu caja</h2>
+            <p class="section-description">
+              Como toda herramienta financiera, BodegApp funciona mejor si sigues
+              algunas rutinas sencillas de control diario.
+            </p>
+          </div>
+
+          <div class="section-grid">
+            <div class="card">
+
+              <h3>Buenas prácticas</h3>
+              <ul>
+                <li>
+                  Define una contraseña de administrador si varios usuarios usan
+                  el sistema.
+                </li>
+                <li>Actualiza las tasas de cambio con regularidad.</li>
+                <li>Realiza el Cierre Z todos los días para cuadrar caja.</li>
+                <li>Controla las alertas de stock bajo antes de abrir cada día.</li>
+              </ul>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Preguntas rápidas</div>
+            <h2 class="section-title">Lo que todos preguntan sobre BodegApp</h2>
+          </div>
+
+          <div class="columns-2">
+            <div class="card">
+              <div class="faq-item">
+                <strong>¿Necesito Internet para usarlo?</strong>
+                <span>No. El sistema funciona totalmente offline.</span>
+              </div>
+              <div class="faq-item">
+                <strong>¿Puedo usarlo desde mi teléfono?</strong>
+                <span>
+                  Sí. Mientras esté en la misma red Wi-Fi, puedes escanear el QR
+                  y usarlo desde el navegador.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>¿Admite ventas por peso?</strong>
+                <span>
+                  Sí. Puedes ingresar cantidades en Kg (por ejemplo 0,850 Kg).
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>¿Puedo combinar métodos de pago?</strong>
+                <span>
+                  Sí. En una sola venta puedes mezclar efectivo VES, USD y
+                  tarjeta/POS.
+                </span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="faq-item">
+                <strong>¿Las deudas se devalúan?</strong>
+                <span>
+                  Las deudas se registran en dólares (USD). Los abonos recalculan
+                  el saldo en esta moneda para proteger el valor.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>¿Genera etiquetas de precio?</strong>
+                <span>
+                  Sí. Puedes imprimir habladores con nombre y precio en USD.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>¿El cierre de caja deja evidencia?</strong>
+                <span>
+                  Sí. El Reporte Z genera un PDF con conteo, diferencias y notas
+                  de justificación.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>¿Puedo migrar mi inventario actual?</strong>
+                <span>
+                  Puedes importar tus productos desde un archivo CSV para no
+                  empezar desde cero.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="cta">
+        <div class="container">
+          <div class="cta-card">
+            <h2>¿Listo para modernizar tu bodega?</h2>
+            <p>
+              BodegApp combina la sencillez de una caja tradicional con la
+              potencia de un sistema moderno. Sin depender de Internet y con
+              todo bajo tu control.
+            </p>
+            <div class="hero-actions">
+              <a href="https://1drv.ms/u/c/c7e09ae7569610d9/EawGWnFz2MxFoCiep2410G8BWzUi94SXXqAXnUbUtA8h3Q?e=5i58Oj" class="btn btn-primary">
+                Descargar BodegApp
+              </a>
+              <a href="https://wa.me/584241970773" class="btn btn-outline">
+                Contáctanos
+              </a>
+            </div>
+            <div class="cta-small">
+              ¿Tienes dudas específicas? Contáctanos y armamos una demo adaptada a
+              tu negocio.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> BodegApp. Todos los derechos reservados.
+      </div>
+    </footer>
   </div>
-</header>
 
-  <!-- Descripción -->
-  <section class="max-w-4xl mx-auto text-center py-12 px-4">
-    <h2 class="text-2xl font-semibold mb-4 text-blue-700">Gestión completa y sencilla</h2>
-    <p class="text-gray-700 leading-relaxed">
-      BodegApp es una aplicación de escritorio creada para emprendedores, bodegueros y pequeños comerciantes en Venezuela. 
-      Permite gestionar inventarios, ventas, cierres de caja y más, todo de forma rápida, segura y sin conexión a internet.
-    </p>
-  </section>
+  <div id="modal-overlay">
+    <span id="modal-close">&times;</span>
+    <img id="modal-image" src="" alt="Vista ampliada" />
+  </div>
 
-  <!-- Galería -->
-  <section class="bg-white py-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-semibold text-center text-blue-700 mb-8">Vista general del sistema</h2>
+  <script src="script.js"></script>
 
-      <!-- Configuración -->
-      <h3 class="text-xl font-semibold text-blue-600 mb-4">Módulo de Configuración</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <img src="public/images/configuracion1.png" class="rounded-lg shadow" alt="Configuración 1">
-        <img src="public/images/configuracion2.png" class="rounded-lg shadow" alt="Configuración 2">
-        <img src="public/images/configuracion3.png" class="rounded-lg shadow" alt="Configuración 3">
-      </div>
-
-      <!-- Inventario -->
-      <h3 class="text-xl font-semibold text-blue-600 mb-4">Módulo de Inventario</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <img src="public/images/inventario1.png" class="rounded-lg shadow" alt="Inventario 1">
-        <img src="public/images/inventario2.png" class="rounded-lg shadow" alt="Inventario 2">
-        <img src="public/images/inventario3.png" class="rounded-lg shadow" alt="Inventario 3">
-      </div>
-
-      <!-- Ventas -->
-      <h3 class="text-xl font-semibold text-blue-600 mb-4">Módulo de Ventas (POS)</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <img src="public/images/ventas1.png" class="rounded-lg shadow" alt="Ventas 1">
-        <img src="public/images/ventas2.png" class="rounded-lg shadow" alt="Ventas 2">
-        <img src="public/images/ventas3.png" class="rounded-lg shadow" alt="Ventas 3">
-      </div>
-
-      <!-- Recibos y Cierre de Caja -->
-      <h3 class="text-xl font-semibold text-blue-600 mb-4">Recibos y Cierre de Caja</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src="public/images/recibo1.png" class="rounded-lg shadow" alt="Recibo">
-        <img src="public/images/cierre de caja.png" class="rounded-lg shadow" alt="Cierre de Caja">
-      </div>
-    </div>
-
-    <!-- Video de YouTube -->
-<div class="mt-12 text-center">
-<h3 class="text-xl font-semibold text-blue-600 mb-4">Demostración en Video</h3>
-<div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
-<iframe class="rounded-lg shadow-lg w-full h-96" src="https://www.youtube.com/embed/Cj8ScG4-arQ?si=n-rIi3WU0BAOhgkE" title="Video demostrativo de BodegApp" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-  </section>
-
-  <!-- Llamado a la acción -->
-  <section class="bg-blue-600 text-white text-center py-12">
-    <h2 class="text-2xl font-semibold mb-2">¿Listo para optimizar tu bodega?</h2>
-    <p class="mb-6">Descubre la forma más fácil de gestionar tu negocio con BodegApp.</p>
-    <a href="https://1drv.ms/u/c/c7e09ae7569610d9/EawGWnFz2MxFoCiep2410G8BWzUi94SXXqAXnUbUtA8h3Q?e=XoEcve"
-      class="bg-white text-blue-600 font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-50 transition">
-      Pruebalo Gratis por 72 horas
-    </a>
-  </section>
-
-  <!-- Pie de página -->
-  <footer class="text-center py-6 text-gray-600 text-sm">
-    © 2025 Código Creativo™ — Todos los derechos reservados. <br />
-    Contacto: <a href="mailto:codigocreativoma@gmail.com" class="text-blue-600 hover:underline">codigocreativoma@gmail.com</a>
-  </footer>
 </body>
 </html>
