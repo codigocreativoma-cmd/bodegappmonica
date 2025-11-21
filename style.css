@@ -638,3 +638,40 @@ footer a {
     flex-direction: column;
   }
 }
+
+/* ===== Página de descargas ===== */
+
+/* Grid de versiones: 3 columnas iguales en escritorio */
+.download-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .download-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Cada card de versión con la misma altura */
+.download-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empuja el área del botón hacia abajo para alinear visualmente */
+.download-card .version-footer {
+  margin-top: auto;
+}
+
+/* Requisitos centrados */
+.requisitos-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.requisitos-grid .card {
+  max-width: 480px;
+  text-align: center;
+}
