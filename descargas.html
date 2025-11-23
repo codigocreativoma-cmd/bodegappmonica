@@ -40,97 +40,72 @@
 
     <main>
       <section id="versiones" class="hero">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Descargas</div>
-      <h1 class="section-title">Versiones de BodegApp</h1>
-      <p class="section-description">
-        Cualquiera de las versiones de BodegApp se puede probar
-        <strong>gratis durante 3 días</strong>. Luego de ese periodo,
-        podrás activar tu licencia definitiva.
-      </p>
-    </div>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-kicker">Descargas</div>
+            <h1 class="section-title">Versiones de BodegApp</h1>
+            <p class="section-description">
+              Cualquiera de las versiones de BodegApp se puede probar
+              <strong>gratis durante 3 días</strong>. Luego de ese periodo,
+              podrás activar tu licencia definitiva.
+            </p>
+          </div>
 
-    <!-- OJO: agrego download-grid -->
-    <div class="section-grid download-grid">
-      <!-- Versión 1 -->
-      <div class="card download-card">
-        <h2>Versión 1 – Windows 10 en adelante (MSI)</h2>
-        <p>
-          Instalador recomendado para la mayoría de los equipos modernos con
-          Windows 10 o superior. Usa instalador MSI estándar.
-        </p>
-        <ul>
-          <li>Compatible con Windows 10 y versiones posteriores.</li>
-          <li>Instalación guiada mediante archivo <strong>.msi</strong>.</li>
-          <li>Incluye prueba gratuita de 3 días.</li>
-        </ul>
-        <!-- Footer para empujar el botón abajo -->
-        <div class="version-footer">
-          <div class="hero-actions" style="margin-top: 1rem;">
-            <a
-              href="https://github.com/codigocreativoma-cmd/bodegappzip/releases/download/V1.0.1/BodegApp_instalador.zip"
-              class="btn btn-primary"
-            >
-              Descargar para Windows 10+ (MSI)
-            </a>
+          <!-- OJO: agrego download-grid -->
+          <div class="section-grid download-grid">
+            <!-- Para Windows 10+ -->
+            <div class="card download-card">
+              <h2>Para Windows 10+</h2>
+              <p>
+                Instalador recomendado para la mayoría de los equipos modernos con
+                Windows 10 o superior.
+              </p>
+              <ul>
+                <li>Compatible con Windows 10 y versiones posteriores.</li>
+                <li>Instalación guiada mediante instalador moderno<strong></strong>.</li>
+                <li>Incluye prueba gratuita de 3 días.</li>
+              </ul>
+              <!-- Footer para empujar el botón abajo -->
+              <div class="version-footer">
+                <div class="hero-actions" style="margin-top: 1rem;">
+                  <a
+                    href="https://github.com/codigocreativoma-cmd/bodegappzip/releases/download/V1.0.1/BodegApp_instalador.zip"
+                    class="btn btn-primary"
+                  >
+                    Descargar para Windows 10+
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Para Windows 7 -->
+            <div class="card download-card">
+              <h2>Para Windows 7</h2>
+              <p>
+                Versión pensada para equipos con Windows 7.
+                Estará disponible próximamente para descarga.
+              </p>
+              <ul>
+                <li>Compatible con Windows 7 (64 bits).</li>
+                <li>Incluirá prueba gratuita de 3 días al estar disponible.</li>
+              </ul>
+              <div class="version-footer">
+                <div class="hero-actions" style="margin-top: 1rem; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    disabled
+                    style="opacity: 0.5; cursor: not-allowed; pointer-events: none;"
+                  >
+                    Descargar para Windows 7
+                  </button>
+                  <span class="tag">Próximamente</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Versión 2 -->
-      <div class="card download-card">
-        <h2>Versión 2 – Windows 10 en adelante (sin MSI)</h2>
-        <p>
-          Ideal para equipos donde no se puede utilizar instaladores MSI.
-          Se distribuye como ejecutable/paquete alternativo.
-        </p>
-        <ul>
-          <li>Compatible con Windows 10 y versiones posteriores.</li>
-          <li>No requiere instalador MSI.</li>
-          <li>Incluye prueba gratuita de 3 días.</li>
-        </ul>
-        <div class="version-footer">
-          <div class="hero-actions" style="margin-top: 1rem;">
-            <a
-              href="https://github.com/codigocreativoma-cmd/bodegappzip/releases/download/V1.0.1/BodegApp_NoMSI_Installer.zip"
-              class="btn btn-primary"
-            >
-              Descargar para Windows 10+ (sin MSI)
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Versión 3 -->
-      <div class="card download-card">
-        <h2>Versión 3 – Windows 7 (sin MSI)</h2>
-        <p>
-          Versión pensada para equipos con Windows 7 que no utilizan MSI.
-          Estará disponible próximamente para descarga.
-        </p>
-        <ul>
-          <li>Compatible con Windows 7 (64 bits).</li>
-          <li>Distribución sin instalador MSI.</li>
-          <li>Incluirá prueba gratuita de 3 días al estar disponible.</li>
-        </ul>
-        <div class="version-footer">
-          <div class="hero-actions" style="margin-top: 1rem; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-            <button
-              class="btn btn-primary"
-              type="button"
-              disabled
-              style="opacity: 0.5; cursor: not-allowed; pointer-events: none;"
-            >
-              Descargar para Windows 7
-            </button>
-            <span class="tag">Próximamente</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section id="requisitos">
         <div class="container">
