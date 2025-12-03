@@ -641,15 +641,18 @@ footer a {
 
 /* ===== Página de descargas ===== */
 
-/* Grid de versiones: 3 columnas iguales en escritorio */
+/* Grid de versiones: una sola tarjeta */
 .download-grid {
   display: grid;
   gap: 2rem;
 }
 
+/* Escritorio: tarjeta más ancha y centrada */
 @media (min-width: 900px) {
   .download-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
   }
 }
 
