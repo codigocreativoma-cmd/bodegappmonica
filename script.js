@@ -1,57 +1,29 @@
-// Año dinámico en el footer
-const yearEl = document.getElementById("year");
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const card = document.querySelector('.glass-card');
+  const container = document.querySelector('.main-container');
 
-// Scroll suave para enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-  anchor.addEventListener("click", function (e) {
-    var targetId = this.getAttribute("href");
-    if (targetId && targetId.length > 1) {
-      var el = document.querySelector(targetId);
-      if (el) {
-        e.preventDefault();
-        window.scrollTo({
-          top: el.offsetTop - 70,
-          behavior: "smooth",
-        });
-      }
-    }
-  });
-});
+  if (window.matchMedia("(min-width: 768px)").matches && card && container) {
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg
+      const rotateY = ((x - centerX) / centerX) * 5; // Max 5deg
 
-// ===========================
-// Lógica del modal de galería
-// (solo si existen los elementos)
-// ===========================
-const modalOverlay = document.getElementById("modal-overlay");
-const modalImage = document.getElementById("modal-image");
-const closeModalBtn = document.getElementById("modal-close");
-const galleryImages = document.querySelectorAll(".gallery-img");
-
-// Solo inicializamos el modal si la estructura existe en el DOM
-if (modalOverlay && modalImage && closeModalBtn) {
-  function openModal(src) {
-    modalImage.src = src;
-    modalOverlay.style.display = "flex";
-  }
-
-  function closeModal() {
-    modalOverlay.style.display = "none";
-  }
-
-  galleryImages.forEach(function (img) {
-    img.addEventListener("click", function () {
-      openModal(this.src);
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
-  });
 
-  closeModalBtn.addEventListener("click", closeModal);
-
-  modalOverlay.addEventListener("click", function (e) {
-    if (e.target === modalOverlay) {
-      closeModal();
-    }
-  });
-}
+    container.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      card.style.transition = 'transform 0.5s ease';
+    });
+    
+    container.addEventListener('mouseenter', () => {
+       card.style.transition = 'transform 0.1s ease';
+    });
+  }
+});

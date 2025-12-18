@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enlaces BodegApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --primary: #1976d2;
+      --primary-dark: #0d47a1;
+      --accent: #00b894;
+      --bg: #f5f7fb;
+      --card-bg: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #e3f2fd 0, #f5f7fb 45%, #f5f7fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .linktree-wrapper {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .linktree-card {
+      text-align: center;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .profile-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      box-shadow: 0 10px 26px rgba(25, 118, 210, 0.45);
+    }
+
+    .profile-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+
+    .profile-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 20rem;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(25, 118, 210, 0.08);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .tagline span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .tag {
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: #e0f2fe;
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin: 0.3rem 0 0.2rem;
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .links {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.85rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+      text-decoration: none;
+      transition:
+        transform 0.14s ease,
+        box-shadow 0.14s ease,
+        background 0.14s ease,
+        color 0.14s ease;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(25, 118, 210, 0.35);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-dark);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .btn-whatsapp {
+      border-color: rgba(16, 185, 129, 0.6);
+    }
+
+    .btn:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn-title {
+      font-size: 0.9rem;
+    }
+
+    .btn-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .btn-primary .btn-subtitle {
+      color: rgba(226, 232, 240, 0.9);
+    }
+
+    .btn-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: inherit;
+    }
+
+    .btn-outline .btn-icon {
+      background: rgba(239, 246, 255, 0.9);
+      color: var(--primary-dark);
+    }
+
+    .btn-whatsapp .btn-icon {
+      background: rgba(187, 247, 208, 0.8);
+      color: #047857;
+    }
+
+    .helper-text {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .helper-highlight {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 1.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer span {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 1.8rem 1.1rem;
+      }
+
+      .card {
+        padding: 1.6rem 1.3rem 1.4rem;
+      }
+
+      .btn {
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="linktree-wrapper">
+      <section class="card linktree-card">
+        <div class="profile">
+          <div class="tagline">
+            <span></span>
+            <span></span>
+          </div>
+
+        <div class="profile-avatar">
+            <img src="BodegApp.png" alt="Logo BodegApp" class="profile-avatar-img" />
+        </div>
+
+          <div>
+            <div class="profile-title">BodegApp</div>
+            <p class="profile-subtitle">
+              Sistema para tiendas y bodegas Venezolanas 🇻🇪.
+            </p>
+          </div>
+
+          <div class="tag">
+            <span class="tag-dot"></span>
+            <span>Funciona sin conexión a internet · VES / USD</span>
+          </div>
+        </div>
+
+        <div class="links">
+          <!-- Botón: Página de BodegApp -->
+          <a
+            class="btn btn-primary"
+            href="https://codigocreativoma-cmd.github.io/bodegapp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="btn-label">
+              <span class="btn-title">Visitar página de BodegApp</span>
+              <span class="btn-subtitle">Ver detalles del sistema y módulos</span>
+            </div>
+            <span class="btn-icon">↗</span>
+          </a>
+
+          <!-- Botón: WhatsApp Mónica -->
+          <a
+            class="btn btn-outline btn-whatsapp"
+            href="https://wa.me/584241970773?text=Hola%20M%C3%B3nica%2C%20estoy%20interesado(a)%20en%20BodegApp."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="btn-label">
+              <span class="btn-title">Asesora de ventas Mónica</span>
+              <span class="btn-subtitle">Escríbela por WhatsApp</span>
+            </div>
+            <span class="btn-icon btn-icon-wa">
+                <img src="iconowhatsapp.png" alt="WhatsApp" />
+            </span>
+          </a>
+
+          <!-- Botón: WhatsApp Fabián -->
+          <a
+            class="btn btn-outline btn-whatsapp"
+            href="https://wa.me/584147550202?text=Hola%20Fabi%C3%A1n%2C%20estoy%20interesado(a)%20en%20BodegApp."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="btn-label">
+              <span class="btn-title">Asesor de ventas Fabián</span>
+              <span class="btn-subtitle">Atención comercial por WhatsApp</span>
+            </div>
+            <span class="btn-icon btn-icon-wa">
+                <img src="iconowhatsapp.webp" alt="WhatsApp" />
+            </span>
+          </a>
+        </div>
+
+        <div class="footer">
+          <span>BodegApp</span> · Sistema para tiendas y bodegas Venezolanas 🇻🇪.
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
